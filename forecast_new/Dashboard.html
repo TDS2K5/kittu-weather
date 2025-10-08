@@ -1036,7 +1036,7 @@
           // ✅ Save weather data and redirect to forecast page
           localStorage.setItem("selectedCity", data.name);
           localStorage.setItem("weatherData", JSON.stringify(data));
-          window.location.href = "forecast_new.html";
+          //   window.location.href = "forecast_new.html";
         } catch (error) {
           console.error("Weather fetch error:", error);
           showError(
@@ -1063,7 +1063,7 @@
           // ✅ Save weather data and redirect to forecast page
           localStorage.setItem("selectedCity", data.name);
           localStorage.setItem("weatherData", JSON.stringify(data));
-          window.location.href = "forecast_new.html";
+          //   window.location.href = "forecast_new.html";
         } catch (error) {
           console.error("Weather fetch error:", error);
           showError(error.message || "Unable to fetch weather data.");

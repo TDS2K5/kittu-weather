@@ -1628,20 +1628,17 @@
       };
 
       window.addEventListener("load", () => {
-        if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(
-            (position) => {
-              fetchWeatherByCoords(
-                position.coords.latitude,
-                position.coords.longitude
-              );
-            },
-            (error) => {
-              fetchWeatherByCity("udupi");
-            }
-          );
+        const weatherData = localStorage.getItem("weatherData");
+
+        if (weatherData) {
+          const data = JSON.parse(weatherData);
+          updateWeatherDisplay(data); // updates the UI
+          fetchHourlyForecast(data.coord.lat, data.coord.lon); // optional
         } else {
-          fetchWeatherByCity("udupi");
+          console.warn("No city selected in dashboard yet.");
+          // optionally show a message instead of redirect
+          document.getElementById("location").textContent =
+            "Select a city in dashboard first!";
         }
       });
 
