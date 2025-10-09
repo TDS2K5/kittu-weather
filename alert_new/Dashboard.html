@@ -827,12 +827,13 @@
             <h1>Kittu Weather</h1>
         </div>
         <div class="nav-links">
-            <a href="#" class="nav-link active">Dashboard</a>
-            <a href="#" class="nav-link">Forecast</a>
+            <a href="Dashboard.html" class="nav-link active">Dashboard</a>
+            <a href="forecast_old.html" class="nav-link">Forecast</a>
             <a href="#" class="nav-link">Maps</a>
-            <a href="#" class="nav-link">Alerts</a>
+            <a href="alert1.html" class="nav-link">Alerts</a>
             <a href="#" class="nav-link">Settings</a>
         </div>
+        
     </nav>
 
     <div class="container">
@@ -1023,6 +1024,8 @@
             document.getElementById('windDirection').textContent = `${getWindDirection(data.wind.deg)} Direction`;
 
             document.getElementById('cityInput').value = '';
+
+            localStorage.setItem("selectedCity", data.name);
         }
 
         function updateHourlyForecast(hourlyData) {
