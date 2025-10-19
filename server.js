@@ -8,8 +8,6 @@ const helmet = require('helmet')
 
 app.use(express.static(path.join(__dirname,'public')))
 
-app.use(helmet())
-
 
 app.get("/",(req,res)=>{
     res.sendFile(path.join(__dirname,"templates","home.html"));
@@ -32,4 +30,3 @@ app.get("/alert",(req,res)=>{
 })
 
 app.listen(port,()=> console.log(`server running on http://localhost:${port}`))
-
